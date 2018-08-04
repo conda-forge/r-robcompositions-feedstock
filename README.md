@@ -14,14 +14,16 @@ Summary: Methods for analysis of compositional data including robust methods, im
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-robcompositions-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-robcompositions-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-robcompositions-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-robcompositions-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-robcompositions-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-robcompositions-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-robcompositions-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-robcompositions-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-robcompositions-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-robcompositions-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-robcompositions-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-robcompositions-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-robcompositions/badges/version.svg)](https://anaconda.org/conda-forge/r-robcompositions)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-robcompositions/badges/downloads.svg)](https://anaconda.org/conda-forge/r-robcompositions)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--robcompositions-green.svg)](https://anaconda.org/conda-forge/r-robcompositions) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-robcompositions.svg)](https://anaconda.org/conda-forge/r-robcompositions) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-robcompositions.svg)](https://anaconda.org/conda-forge/r-robcompositions) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-robcompositions.svg)](https://anaconda.org/conda-forge/r-robcompositions) |
 
 Installing r-robcompositions
 ============================
