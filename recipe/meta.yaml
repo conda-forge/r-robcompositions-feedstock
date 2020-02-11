@@ -1,4 +1,4 @@
-{% set version = "2.2.0" %}
+{% set version = '2.2.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/robCompositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/robCompositions/robCompositions_{{ version }}.tar.gz
-  sha256: d18e6fcfc957e7a813ae210ca31a04c4c7c1c1a1fc571355be2439144f787424
+  sha256: e6dfcc63b2e0aeaaebc0aab15880c6662b5821ecb55cc5bac6bc7e47c0cae0a2
 
 build:
   merge_build_host: True  # [win]
@@ -35,6 +35,7 @@ requirements:
     - r-ggally
     - r-mass
     - r-rcpp
+    - r-rcppeigen
     - r-vim
     - r-car
     - r-cluster
@@ -46,6 +47,7 @@ requirements:
     - r-kernlab
     - r-mclust
     - r-pls
+    - r-reshape2
     - r-robustbase
     - r-rrcov
     - r-sroc
@@ -57,6 +59,7 @@ requirements:
     - r-ggally
     - r-mass
     - r-rcpp
+    - r-rcppeigen
     - r-vim
     - r-car
     - r-cluster
@@ -68,6 +71,7 @@ requirements:
     - r-kernlab
     - r-mclust
     - r-pls
+    - r-reshape2
     - r-robustbase
     - r-rrcov
     - r-sroc
@@ -81,18 +85,25 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=robCompositions
-  license: GPL (>= 2)
-  summary: Methods for analysis of compositional data including robust methods, imputation, methods
-    to replace rounded zeros, (robust) outlier detection for compositional data, (robust)
-    principal component analysis for compositional data, (robust) factor analysis for
-    compositional data, (robust) discriminant analysis for compositional data (Fisher
-    rule), robust regression with compositional predictors and (robust) Anderson-Darling
+  license: GPL-2
+  summary: Methods for analysis of compositional data including robust methods  (<doi:10.1007/978-3-319-96422-5>),
+    imputation of missing values (<doi:10.1016/j.csda.2009.11.023>), methods to replace
+    rounded zeros (<doi:10.1080/02664763.2017.1410524>, <doi:10.1016/j.chemolab.2016.04.011>,
+    <doi:10.1016/j.csda.2012.02.012>), count zeros (<doi:10.1177/1471082X14535524>),
+    methods to deal with essential zeros (<doi:10.1080/02664763.2016.1182135>), (robust)
+    outlier detection for compositional data, (robust) principal component analysis
+    for compositional data, (robust) factor analysis for compositional data, (robust)
+    discriminant analysis for compositional data (Fisher rule), robust regression with
+    compositional predictors, functional data analysis and p-splines (<doi:10.1016/j.csda.2015.07.007>),
+    contingency (<doi:10.1080/03610926.2013.824980>) and compositional tables (<doi:10.1111/sjos.12326>,
+    <doi:10.1111/sjos.12223>, <doi:10.1080/02664763.2013.856871>) and (robust) Anderson-Darling
     normality tests for compositional data as well as popular log-ratio transformations
     (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation
     and diagnostic tools are implemented as well as high and low-level plot functions
     for the ternary diagram.
-  license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_family: GPL2
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
@@ -101,22 +112,23 @@ extra:
 # Package: robCompositions
 # Type: Package
 # Title: Compositional Data Analysis
-# Version: 2.1.0
-# Date: 2019-04-15
-# Depends: R (>= 3.0.0), robustbase, ggplot2, data.table, e1071, pls
-# LinkingTo: Rcpp
-# Imports: car, cvTools, rrcov, cluster, fpc, GGally, kernlab, MASS, mclust, Rcpp, sROC, tidyr, VIM, zCompositions
-# Suggests: knitr
+# Version: 2.2.1
+# Date: 2020-02-10
+# Depends: R (>= 3.5.0), ggplot2, pls, data.table
+# LinkingTo: Rcpp, RcppEigen
+# Imports: car, cvTools, e1071, rrcov, cluster, fpc, GGally, kernlab, MASS, mclust, sROC, tidyr, robustbase, VIM, zCompositions, reshape2, Rcpp
+# Suggests: knitr, testthat
 # VignetteBuilder: knitr
-# Authors@R: c( person("Matthias", "Templ", email="matthias.templ@gmail.com", role=c("aut", "cre")), person("Karel", "Hron", email="Alexander.Kowarik@statistik.gv.at", role="aut"), person("Peter", "Filzmoser", email = "Bernhard.Meindl@statistik.gv.at", role="aut"), person("Kamila", "Facevicova", email="kamila.facevicova@gmail.com", role="ctb"), person("Petra", "Kynclova", email="kynclova.petra@gmail.com", role="ctb"), person("Jan", "Walach", email ="walach.jan@gmail.com ", role="ctb"), person("Veronika", "Pintar", email ="vroni.pintar@gmx.at", role="ctb"), person("Jiajia", "Chen", email ="chenjiajia0401@163.com", role="ctb"),	 person("Dominika", "Miksova", email ="miksovadominika1@gmail.com", role="ctb"))
+# Authors@R: c( person("Matthias", "Templ", email="matthias.templ@gmail.com", role=c("aut", "cre"), comment=c(ORCID="0000-0002-8638-5276")), person("Karel", "Hron", email="Alexander.Kowarik@statistik.gv.at", role="aut", comment = c(ORCID="0000-0002-1847-6598")), person("Peter", "Filzmoser", email = "Bernhard.Meindl@statistik.gv.at", role="aut", comment = c(ORCID="0000-0002-8014-4682")), person("Kamila", "Facevicova", email="kamila.facevicova@gmail.com", role="ctb"), person("Petra", "Kynclova", email="kynclova.petra@gmail.com", role="ctb"), person("Jan", "Walach", email ="walach.jan@gmail.com ", role="ctb"), person("Veronika", "Pintar", email ="vroni.pintar@gmx.at", role="ctb"), person("Jiajia", "Chen", email ="chenjiajia0401@163.com", role="ctb"), person("Dominika", "Miksova", email ="miksovadominika1@gmail.com", role="ctb"), person("Bernhard", "Meindl", email ="bernhard.meindl@gmail.com", role="ctb"), person("Alessandra", "Menafoglio", email = "alessandra.menafoglio@polimi.it", role="ctb", comment = c(ORCID="0000-0003-0682-6412")), person("Alessia", "Di Blasi", email = "alessia.diblasi@mail.polimi.it", role="ctb"), person("Federico", "Pavone", email = "federico.pavone@mail.polimi.it", role="ctb"), person("Gianluca", "Zeni", email = "gianluca.zeni@mail.polimi.it", role="ctb"))
 # Maintainer: Matthias Templ <matthias.templ@gmail.com>
-# Description: Methods for analysis of compositional data including robust methods, imputation, methods to replace rounded zeros, (robust) outlier detection for compositional data, (robust) principal component analysis for compositional data, (robust) factor analysis for compositional data, (robust) discriminant analysis for compositional data (Fisher rule), robust regression with compositional predictors and (robust) Anderson-Darling normality tests for compositional data as well as popular log-ratio transformations (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation and diagnostic tools are implemented as well as high and low-level plot functions for the ternary diagram.
+# Description: Methods for analysis of compositional data including robust methods  (<doi:10.1007/978-3-319-96422-5>), imputation of missing values (<doi:10.1016/j.csda.2009.11.023>), methods to replace rounded zeros (<doi:10.1080/02664763.2017.1410524>, <doi:10.1016/j.chemolab.2016.04.011>, <doi:10.1016/j.csda.2012.02.012>), count zeros (<doi:10.1177/1471082X14535524>), methods to deal with essential zeros (<doi:10.1080/02664763.2016.1182135>), (robust) outlier detection for compositional data, (robust) principal component analysis for compositional data, (robust) factor analysis for compositional data, (robust) discriminant analysis for compositional data (Fisher rule), robust regression with compositional predictors, functional data analysis and p-splines (<doi:10.1016/j.csda.2015.07.007>), contingency (<doi:10.1080/03610926.2013.824980>) and compositional tables (<doi:10.1111/sjos.12326>, <doi:10.1111/sjos.12223>, <doi:10.1080/02664763.2013.856871>) and (robust) Anderson-Darling normality tests for compositional data as well as popular log-ratio transformations (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation and diagnostic tools are implemented as well as high and low-level plot functions for the ternary diagram.
 # License: GPL (>= 2)
 # LazyLoad: yes
 # LazyData: true
-# RoxygenNote: 6.1.1
+# Encoding: UTF-8
+# RoxygenNote: 7.0.0
 # NeedsCompilation: yes
-# Packaged: 2019-04-15 16:33:54 UTC; teml
-# Author: Matthias Templ [aut, cre], Karel Hron [aut], Peter Filzmoser [aut], Kamila Facevicova [ctb], Petra Kynclova [ctb], Jan Walach [ctb], Veronika Pintar [ctb], Jiajia Chen [ctb], Dominika Miksova [ctb]
+# Packaged: 2020-02-10 11:10:50 UTC; matthias
+# Author: Matthias Templ [aut, cre] (<https://orcid.org/0000-0002-8638-5276>), Karel Hron [aut] (<https://orcid.org/0000-0002-1847-6598>), Peter Filzmoser [aut] (<https://orcid.org/0000-0002-8014-4682>), Kamila Facevicova [ctb], Petra Kynclova [ctb], Jan Walach [ctb], Veronika Pintar [ctb], Jiajia Chen [ctb], Dominika Miksova [ctb], Bernhard Meindl [ctb], Alessandra Menafoglio [ctb] (<https://orcid.org/0000-0003-0682-6412>), Alessia Di Blasi [ctb], Federico Pavone [ctb], Gianluca Zeni [ctb]
 # Repository: CRAN
-# Date/Publication: 2019-04-15 17:22:43 UTC
+# Date/Publication: 2020-02-11 17:20:02 UTC
