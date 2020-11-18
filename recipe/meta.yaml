@@ -1,4 +1,4 @@
-{% set version = '2.2.1' %}
+{% set version = "2.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/robCompositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/robCompositions/robCompositions_{{ version }}.tar.gz
-  sha256: e6dfcc63b2e0aeaaebc0aab15880c6662b5821ecb55cc5bac6bc7e47c0cae0a2
+  sha256: 2da186e37840a9f447b767597e84d04452527988807bbcdca7dc4929a166fb5f
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -86,24 +86,13 @@ test:
 about:
   home: https://CRAN.R-project.org/package=robCompositions
   license: GPL-2
-  summary: Methods for analysis of compositional data including robust methods  (<doi:10.1007/978-3-319-96422-5>),
-    imputation of missing values (<doi:10.1016/j.csda.2009.11.023>), methods to replace
-    rounded zeros (<doi:10.1080/02664763.2017.1410524>, <doi:10.1016/j.chemolab.2016.04.011>,
-    <doi:10.1016/j.csda.2012.02.012>), count zeros (<doi:10.1177/1471082X14535524>),
-    methods to deal with essential zeros (<doi:10.1080/02664763.2016.1182135>), (robust)
-    outlier detection for compositional data, (robust) principal component analysis
-    for compositional data, (robust) factor analysis for compositional data, (robust)
-    discriminant analysis for compositional data (Fisher rule), robust regression with
-    compositional predictors, functional data analysis and p-splines (<doi:10.1016/j.csda.2015.07.007>),
-    contingency (<doi:10.1080/03610926.2013.824980>) and compositional tables (<doi:10.1111/sjos.12326>,
-    <doi:10.1111/sjos.12223>, <doi:10.1080/02664763.2013.856871>) and (robust) Anderson-Darling
-    normality tests for compositional data as well as popular log-ratio transformations
-    (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation
-    and diagnostic tools are implemented as well as high and low-level plot functions
-    for the ternary diagram.
+  summary: Methods for analysis of compositional data including robust methods  (<doi:10.1007/978-3-319-96422-5>), imputation of missing values (<doi:10.1016/j.csda.2009.11.023>), methods to replace rounded zeros (<doi:10.1080/02664763.2017.1410524>, <doi:10.1016/j.chemolab.2016.04.011>, <doi:10.1016/j.csda.2012.02.012>),
+    count zeros (<doi:10.1177/1471082X14535524>), methods to deal with essential zeros (<doi:10.1080/02664763.2016.1182135>), (robust) outlier detection for compositional data, (robust) principal component analysis for compositional data, (robust) factor analysis for compositional data, (robust) discriminant analysis for
+    compositional data (Fisher rule), robust regression with compositional predictors, functional data analysis and p-splines (<doi:10.1016/j.csda.2015.07.007>), contingency (<doi:10.1080/03610926.2013.824980>) and compositional tables (<doi:10.1111/sjos.12326>, <doi:10.1111/sjos.12223>, <doi:10.1080/02664763.2013.856871>)
+    and (robust) Anderson-Darling normality tests for compositional data as well as popular log-ratio transformations (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation and diagnostic tools are implemented as well as high and low-level plot functions for the ternary diagram.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
