@@ -3,7 +3,7 @@ About r-robcompositions
 
 Home: https://CRAN.R-project.org/package=robCompositions
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robcompositions-feedstock/blob/master/LICENSE.txt)
 
