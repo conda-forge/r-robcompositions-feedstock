@@ -30,6 +30,7 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-ggally
@@ -44,14 +45,15 @@ requirements:
     - r-e1071
     - r-fda
     - r-fpc
+    - r-ggfortify
     - r-ggplot2
     - r-kernlab
     - r-mclust
     - r-pls
     - r-reshape2
+    - r-robusthd
     - r-robustbase
     - r-rrcov
-    - r-sroc
     - r-tidyr
     - r-zcompositions
   run:
@@ -69,14 +71,15 @@ requirements:
     - r-e1071
     - r-fda
     - r-fpc
+    - r-ggfortify
     - r-ggplot2
     - r-kernlab
     - r-mclust
     - r-pls
     - r-reshape2
+    - r-robusthd
     - r-robustbase
     - r-rrcov
-    - r-sroc
     - r-tidyr
     - r-zcompositions
 
