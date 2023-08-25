@@ -3,6 +3,7 @@ About r-robcompositions-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robcompositions-feedstock/blob/main/LICENSE.txt)
 
+
 About r-robcompositions
 -----------------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=robCompositions
 Package license: GPL-2.0-or-later
 
 Summary: Methods for analysis of compositional data including robust methods  (<doi:10.1007/978-3-319-96422-5>), imputation of missing values (<doi:10.1016/j.csda.2009.11.023>), methods to replace rounded zeros (<doi:10.1080/02664763.2017.1410524>, <doi:10.1016/j.chemolab.2016.04.011>, <doi:10.1016/j.csda.2012.02.012>), count zeros (<doi:10.1177/1471082X14535524>), methods to deal with essential zeros (<doi:10.1080/02664763.2016.1182135>), (robust) outlier detection for compositional data, (robust) principal component analysis for compositional data, (robust) factor analysis for compositional data, (robust) discriminant analysis for compositional data (Fisher rule), robust regression with compositional predictors, functional data analysis and p-splines (<doi:10.1016/j.csda.2015.07.007>), contingency (<doi:10.1080/03610926.2013.824980>) and compositional tables (<doi:10.1111/sjos.12326>, <doi:10.1111/sjos.12223>, <doi:10.1080/02664763.2013.856871>) and (robust) Anderson-Darling normality tests for compositional data as well as popular log-ratio transformations (addLR, cenLR, isomLR, and their inverse transformations). In addition, visualisation and diagnostic tools are implemented as well as high and low-level plot functions for the ternary diagram.
+
 About r-robcompositions
 -----------------------
 
