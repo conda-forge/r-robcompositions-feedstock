@@ -61,7 +61,7 @@ requirements:
     - r-tidyr
     - r-zcompositions
   run:
-   - r-base
+    - r-base
     - r-ggally
     - r-mass
     - r-rcpp
