@@ -1,4 +1,4 @@
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/robCompositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/robCompositions/robCompositions_{{ version }}.tar.gz
-  sha256: 20ec138f93904b6cf8a291056d55ed61173d755f190d5e894ed69737d1e383dc
+  sha256: 5c37e805a5de86e81171894d86417ee0ea6d410711b17d347b46dddd0a541615
 
 build:
   number: 0
